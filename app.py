@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 import pdfplumber
 
 app = Flask(__name__)
+CORS(app)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 @app.route('/')
