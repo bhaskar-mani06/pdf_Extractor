@@ -1,0 +1,2 @@
+Flask==2.3.3
+pdfplumber==0.9.0

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Text Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Text Extractor</h1>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-content">
+                <div class="upload-icon">📄</div>
+                <p class="upload-text">Drag and drop your PDF file here</p>
+                <p class="upload-subtext">or click to browse</p>
+                <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+            </div>
+        </div>
+        
+        <div class="file-info" id="fileInfo" style="display: none;">
+            <div class="file-details">
+                <span class="file-name" id="fileName"></span>
+                <button class="extract-btn" id="extractBtn">Extract Text</button>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Extracting text from PDF...</p>
+        </div>
+        
+        <div class="results" id="results" style="display: none;">
+            <h2>Extracted Text</h2>
+            <div class="text-content" id="textContent"></div>
+        </div>
+        
+        <div class="error" id="error" style="display: none;">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

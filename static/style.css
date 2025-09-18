@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.upload-area {
+    border: 3px dashed #ddd;
+    border-radius: 15px;
+    padding: 60px 20px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #fafafa;
+}
+
+.upload-area:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.upload-area.dragover {
+    border-color: #667eea;
+    background: #e8f0fe;
+    transform: scale(1.02);
+}
+
+.upload-content {
+    pointer-events: none;
+}
+
+.upload-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.upload-text {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.upload-subtext {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.file-info {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 4px solid #667eea;
+}
+
+.file-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.file-name {
+    font-weight: 500;
+    color: #333;
+    flex: 1;
+    text-align: left;
+}
+
+.extract-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.extract-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.extract-btn:active {
+    transform: translateY(0);
+}
+
+.loading {
+    margin: 30px 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 6px solid #28a745;
+    border-right: 6px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.results {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.results h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.text-content {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e9ecef;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.summary {
+    background: #e8f5e8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid #28a745;
+}
+
+.summary h3 {
+    color: #155724;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.summary p {
+    color: #155724;
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border-left: 4px solid #dc3545;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .upload-area {
+        padding: 40px 15px;
+    }
+    
+    .file-details {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .file-name {
+        text-align: center;
+    }
+    
+    .text-content {
+        max-height: 300px;
+        font-size: 0.8rem;
+    }
+}
