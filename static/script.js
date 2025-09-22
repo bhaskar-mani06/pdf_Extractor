@@ -66,7 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData();
             formData.append('pdf', file);
-            const res = await fetch('/extract', { method: 'POST', body: formData });
+            
+            // Determine which endpoint to use based on filename
+            let endpoint = '/extract'; // Default universal extractor
+            if (file.name.toLowerCase().includes('kotak')) {
+                endpoint = '/extract-kotak';
+            } else if (file.name.toLowerCase().includes('sbi')) {
+                endpoint = '/extract-sbi';
+            }
+            
+            const res = await fetch(endpoint, { method: 'POST', body: formData });
             const data = await res.json();
 
             if (!res.ok || !data.success) {
